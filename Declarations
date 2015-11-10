@@ -1,0 +1,12 @@
+Option Explicit
+
+Public Declare Function OpenClipboard Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function EmptyClipboard Lib "user32" () As Long
+Public Declare Function CloseClipboard Lib "user32" () As Long
+
+Dim pt As PivotTable    '/Sets the pivottable variable to refresh after pqtoDocusign.
+Dim fromPQ As Range     '/Selects the PowerQuery tab range.
+Dim DocusignRange As Range  '/Selects the Docusign tab range.
+Dim envelopeIDS As Range  '/Selects the envelope ids from the pivot table.
+Dim toMatch As Range    '/Selects the range to paste the envelope ids.
+Dim cleanUp As Range    '/Sets the character cleanup range on Docusign_CSV tab.
