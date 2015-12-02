@@ -1,0 +1,33 @@
+Private Sub CommandButton2_Click()
+
+'
+'Calls, in order, all routines from Module1
+'
+
+screenUpdateState = Application.ScreenUpdating
+statusBarState = Application.DisplayStatusBar
+calcState = Application.Calculation
+eventsState = Application.EnableEvents
+Application.ScreenUpdating = False
+Application.DisplayStatusBar = False
+Application.Calculation = xlCalculationManual
+Application.EnableEvents = False
+
+Call pqtoDocusign
+Call removeSpace
+Call dateForm
+Call refreshIDPivot
+Call removeSpecial
+Call ClearClipboard
+
+Application.ScreenUpdating = screenUpdateState
+Application.DisplayStatusBar = statusBarState
+Application.Calculation = calcState
+Application.EnableEvents = eventsState
+
+ActiveWindow.ScrollRow = 1
+
+MsgBox ("Macro is Complete")
+
+
+End Sub
