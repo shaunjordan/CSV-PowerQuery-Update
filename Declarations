@@ -10,3 +10,5 @@ Dim DocusignRange As Range  '/Selects the Docusign tab range.
 Dim envelopeIDS As Range  '/Selects the envelope ids from the pivot table.
 Dim toMatch As Range    '/Selects the range to paste the envelope ids.
 Dim cleanUp As Range    '/Sets the character cleanup range on Docusign_CSV tab.
+Dim search As Range
+Dim cel As Range
