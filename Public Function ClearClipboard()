@@ -1,0 +1,9 @@
+Public Function ClearClipboard()
+
+'
+'Clears clipboard when macro completes to free up memory.
+'
+    OpenClipboard (0&)
+    EmptyClipboard
+    CloseClipboard
+End Function
