@@ -1,0 +1,12 @@
+Sub pqtoDocusign()
+'
+'Macro removes contents of Docusign_CSV tab and replaces it with the contents of the PowerQuery tab.
+'
+
+Set fromPQ = Worksheets("PowerQuery").Columns("A:F")
+Set DocusignRange = Worksheets("Docusign_CSV").Columns("A:F")
+DocusignRange.ClearContents
+fromPQ.Copy
+DocusignRange.PasteSpecial Paste:=xlPasteAll
+
+End Sub
