@@ -1,0 +1,16 @@
+Sub dateForm()
+
+Set search = Worksheets("Docusign_CSV").Range("E:E")
+
+For Each cel In search
+    If InStr(1, cel.Value, "DateSigned") > 0 Then
+                            
+        cel.Offset(0, 1).Replace What:=".", replacement:="/"
+        cel.Offset(0, 1).Replace What:="-", replacement:="/"
+        cel.Offset(0, 1).NumberFormat = "dd-mmm-yyyy"
+        cel.Offset(0, 1).Value = cel.Offset(0, 1).Value
+    End If
+Next cel
+
+
+End Sub
