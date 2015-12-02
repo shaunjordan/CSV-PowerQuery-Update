@@ -1,0 +1,11 @@
+Sub removeSpace()
+
+'
+'Macro removes the spaces in column E of the Docusign_CSV tab.
+'
+
+Set DocusignRange = Worksheets("Docusign_CSV").Columns("E")
+DocusignRange.Replace What:=" ", replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+End Sub
