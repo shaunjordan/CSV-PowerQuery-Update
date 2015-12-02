@@ -1,0 +1,30 @@
+Sub removeSpecial()
+
+'
+'Removes listed special characters from Docusign_CSV tab and replaces with chosen character.
+'
+
+Set DocusignRange = Worksheets("Docusign_CSV").Columns("F")
+DocusignRange.Replace What:="XXX", replacement:=""
+DocusignRange.Replace What:="Ã¶", replacement:="oe"
+DocusignRange.Replace What:="Ã¼", replacement:="ue"
+DocusignRange.Replace What:="ÃŸ", replacement:="ss"
+DocusignRange.Replace What:="Ã¤", replacement:="ae"
+DocusignRange.Replace What:="Ã–", replacement:="Oe"
+DocusignRange.Replace What:="Ã±", replacement:="n"
+DocusignRange.Replace What:="Ã³", replacement:="o"
+DocusignRange.Replace What:="Ã­", replacement:="i"
+DocusignRange.Replace What:="Ã¡", replacement:="a"
+DocusignRange.Replace What:="Ã‘", replacement:="N"
+DocusignRange.Replace What:="Ãº", replacement:="u"
+DocusignRange.Replace What:="Âº", replacement:="o"
+DocusignRange.Replace What:="Ã´", replacement:="o"
+DocusignRange.Replace What:="Ã¨", replacement:="e"
+DocusignRange.Replace What:="Ã©", replacement:="e"
+DocusignRange.Replace What:="Å½", replacement:="Z"
+DocusignRange.Replace What:="Ã½", replacement:="y"
+DocusignRange.Replace What:=".", replacement:=""
+DocusignRange.Replace What:="&", replacement:=" "
+
+
+End Sub
