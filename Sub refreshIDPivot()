@@ -1,0 +1,19 @@
+Sub refreshIDPivot()
+
+'
+'Refreshes the pivot table that filters EnvelopeIDs (used on the Match tab).
+'
+
+Set envelopeIDS = Worksheets("Pivot_envelope_id").Range("A4:A4892")
+Set toMatch = Worksheets("Match").Range("A2:A4892")
+Set pt = Worksheets("Pivot_envelope_id").PivotTables("EnvelopeIDs")
+    With pt
+        .RefreshTable
+    End With
+
+toMatch.ClearContents
+envelopeIDS.Copy
+toMatch.PasteSpecial Paste:=xlPasteValues
+Sheets("Match").Select
+ 
+End Sub
